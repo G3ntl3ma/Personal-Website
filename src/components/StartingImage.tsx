@@ -9,11 +9,9 @@ type Props = {
 }
 
 export default function StarterImg(props: Props) {
-    //const img: HTMLImageElement = await getMeta(props.src)
-    //const screenSize = useScreenSize();
   return (
-    <div className='w-full h-1/2 absolute bg-gradient-to-t from-custom'>
-      <Image className='object-cover object-top'
+    <div className='relative w-full h-[32rem] bg-gradient-to-t from-custom min-h-1/2'>
+      <Image className='object-cover object-top absolute'
         src = {props.src}
         width={0}
         height={0}
@@ -21,7 +19,7 @@ export default function StarterImg(props: Props) {
         sizes='100vw'
         fill = {true}
         ></Image>
-      <div className='w-full h-full bg-gradient-to-t from-custom to-transparent bg-blend-normal '></div>
+      <div className='absolute w-full h-full bg-gradient-to-t from-custom from-30% to-transparent  to-100% bg-blend-normal '></div>
     </div>
   )
 }
