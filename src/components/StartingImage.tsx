@@ -1,7 +1,5 @@
 import React from 'react'
 import Image from "next/image"
-import { useScreenSize } from '@/utils/screenSize';
-import {getMeta} from '@/utils/getImg'
 
 type Props = {
     src : string,

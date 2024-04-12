@@ -12,8 +12,8 @@ export enum ColorNames {
 
 //Use a Class to simulate Typescript Enums with Object Literals
 export class Side {
-  static readonly LEFT = new Side("h-fit rounded-r-lg w-1/3", "flex justify-start h-fit w-full text-black ");
-  static readonly RIGHT  = new Side( "h-fit rounded-l-lg w-1/3", "flex justify-end h-fit w-full text-black max-w-");
+  static readonly LEFT = new Side("h-fit rounded-r-lg w-1/3", "flex justify-start w-full text-black ");
+  static readonly RIGHT  = new Side( "h-fit rounded-l-lg w-1/3", "flex justify-end w-full text-black");
 
   // private to disallow creating other instances of this type
   private constructor(public readonly inner: string, public readonly outer: any) {
