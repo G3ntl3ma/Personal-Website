@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss";
 import colors from "tailwindcss/colors";
+const { themeVariants, prefersLight, prefersDark } = require("tailwindcss-theme-variants");
 const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -27,18 +28,19 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
-      animation: {
-        'toggle-sun': ' reverse 350ms forwards all 350ms ease-in w-[82px] h-[82px] border-[5px] border-yellow-500 absolute bg-yellow-300'
-      },
-      keyframes: {
-        reverse: {
-          '0%' : {left: "104px", width: "82px"},
-          '60%': {left: "72px", width: "112px"},
-          '100%': {left: "4px"}
-        }
-      }
     },
   },
-  plugins: [],
+    plugins: [
+        themeVariants({
+            themes: {
+                light: {
+                    mediaQuery: prefersLight
+                },
+                dark: {
+                  mediaQuery: prefersDark
+                },
+            },
+        }),
+     ],
 };
 export default config;
