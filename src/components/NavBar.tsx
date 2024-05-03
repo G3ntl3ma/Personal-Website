@@ -4,14 +4,19 @@ import { MdLightbulb } from "react-icons/md";
 import { DarkModeToggle } from '@anatoliygatt/dark-mode-toggle';
 import { useTheme } from 'next-themes';
 import Link from "next/link";
-type Props = {}
+type Props = {style: string}
 
-export default function NavBar({}: Props) {
+export default function NavBar(props: Props) {
+  let styles = {
+    dark: "bg-dark-background",
+    light: "bg-white"
+  }
+
   const [mode, setMode] = useState();
   const {setTheme, resolvedTheme} = useTheme()
 
   return (
-    <div className=' light-theme sticky top-0 h-30 w-full border-b-white border-b-2 justify-evenly flex flex-row shadow-lg'>
+    <div className={`sticky top-0 h-30 w-full border-b-white border-b-2 justify-evenly flex flex-row shadow-lg z-20 ${styles[props.style]}`}>
           <button className='border-none flex-2 light:border-b-black'>
         <Link href="/hello" className='flex-1'>
             <MdLightbulb className='color-white size-8 ml-2'/>
