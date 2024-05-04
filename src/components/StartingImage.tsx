@@ -14,7 +14,7 @@ export default function StarterImg(props: Props) {
     "light" : "from-white from-15%",
     "dark" : "from-dark-background from-20%",
   }
-  let color :string = "dark"
+  let color :string = props.style
 
   if(theme !== undefined)color = theme
 

@@ -1,19 +1,23 @@
-"use client"
 import React, {useState} from 'react'
 import { MdLightbulb } from "react-icons/md";
 import { DarkModeToggle } from '@anatoliygatt/dark-mode-toggle';
+import { Mode } from '@anatoliygatt/dark-mode-toggle';
 import { useTheme } from 'next-themes';
 import Link from "next/link";
+
 type Props = {style: string}
 
 export default function NavBar(props: Props) {
-  let styles = {
+  let styles :any = {
     dark: "bg-dark-background",
     light: "bg-white"
-  }
-
+  } 
   const [mode, setMode] = useState();
-  const {setTheme, resolvedTheme} = useTheme()
+  const {setTheme, theme} = useTheme()
+  let style : string = props.style
+  if(theme !== undefined) style = theme
+  
+  let startMode : Mode = style as Mode
 
   return (
     <div className={`sticky top-0 h-30 w-full border-b-white border-b-2 justify-evenly flex flex-row shadow-lg z-20 ${styles[props.style]}`}>
@@ -36,15 +40,8 @@ export default function NavBar(props: Props) {
               </p>
               </Link>
         </button>
-          <button className='flex-1'>
-        <Link href = "/animals" className='flex-1'>
-            <p>
-              Animals
-            </p>
-        </Link>
-          </button>
        <DarkModeToggle
-          mode={resolvedTheme}
+          mode={startMode}
           dark="Dark"
           light="Light"
           size="md"
