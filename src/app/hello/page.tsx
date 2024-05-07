@@ -1,7 +1,12 @@
-import HelloPage from '@/components/HelloPage'
+import NavBar from '@/components/NavBar'
 import React from 'react'
 type Props = {}
 
 export default function page({}: Props) {
-  return <HelloPage></HelloPage>
+  return (
+    <div className='h-full'>
+      <NavBar></NavBar>
+      <h1 className='h-full text-8xl  text-center p-36'>{"hello :)"}</h1>
+    </div>
+  )
 }
