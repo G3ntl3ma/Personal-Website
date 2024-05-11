@@ -23,7 +23,7 @@ export default function NavBar({}: Props) {
           <button className='flex-1'>
             <Link href="/discord_bot" className='flex-1'>
               <p className='m-3'>
-                Discord Bot
+                LoLBot
               </p>
               </Link>
         </button>
