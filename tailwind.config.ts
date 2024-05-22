@@ -1,6 +1,11 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
 import type { Config } from "tailwindcss";
 import colors from "tailwindcss/colors";
 const { themeVariants, prefersLight, prefersDark } = require("tailwindcss-theme-variants");
+const {
+  default: flattenColorPalette,
+} = require("tailwindcss/lib/util/flattenColorPalette");
+
 const config: Config = {
   mode: 'jit',
   content: [
@@ -9,6 +14,7 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/discord_bot/*.{js,ts,jsx,tsx,mdx}"
   ],
+  darkMode: 'class',
   theme: {
     colors:{
       "dark-background": "#121212",
@@ -25,6 +31,9 @@ const config: Config = {
       'sky' : colors.sky,
     },
     extend: {
+      animation: {
+        aurora: "aurora 60s linear infinite",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -33,6 +42,7 @@ const config: Config = {
     },
   },
     plugins: [
+      addVariablesForColors,
         themeVariants({
             themes: {
                 light: {
@@ -46,3 +56,14 @@ const config: Config = {
      ],
 };
 export default config;
+
+function addVariablesForColors({ addBase, theme }: any) {
+  let allColors = flattenColorPalette(theme("colors"));
+  let newVars = Object.fromEntries(
+    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+  );
+ 
+  addBase({
+    ":root": newVars,
+  });
+}
