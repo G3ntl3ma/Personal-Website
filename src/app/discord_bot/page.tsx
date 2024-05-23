@@ -3,7 +3,6 @@ import StarterImg from '@/components/StartingImage'
 import NavBar from '@/components/NavBar'
 import Image from 'next/image'
 import TextBlock from '@/components/TextBlock'
-import { AuroraBackground } from '@/components/aurora-background'
 type Props = {}
 
 export default function BotPage({}: Props) {
@@ -20,7 +19,6 @@ export default function BotPage({}: Props) {
       <TextBlock text={"Get informed when Games are over"}></TextBlock>
       <img className= "ml-auto mr-auto" src='/discord_finished.png' alt='Message from a finished Game' width="600px"></img>
       </div>
-
     </div>
   )
 }
