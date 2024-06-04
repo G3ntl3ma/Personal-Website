@@ -4,6 +4,7 @@ import NavBar from '@/components/NavBar'
 import Image from 'next/image'
 import TextBlock from '@/components/TextBlock'
 import { TracingBeam } from '@/components/tracing-beam'
+import Footer from "@/components/Footer";
 type Props = {}
 
 export default function BotPage({}: Props) {
@@ -24,6 +25,7 @@ export default function BotPage({}: Props) {
       <a className="mb-5 text-3xl text-center text-balance mt-20 underline m-auto" href="https://discord.com/api/oauth2/authorize?client_id=1087444834492633108&permissions=2048&redirect_uri=https%3A%2F%2Fdiscordapp.com%2Foauth2%2Fauthorize%3F%26client_id%3D1087444834492633108%26scope%3Dbot&scope=bot+applications.commands">Get LoLBot Now</a>
       </div>
       </div>
+      <Footer/>
     </div>
   )
 }
