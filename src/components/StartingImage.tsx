@@ -17,6 +17,7 @@ export default function StarterImg(props: Props) {
         sizes='100vw'
         fill = {true}
         ></Image>
+        
       <div className={`absolute w-full h-full bg-gradient-to-t from-dark-background from-20% to-transparent  to-100% bg-blend-normal`}></div>
     </div>
   )

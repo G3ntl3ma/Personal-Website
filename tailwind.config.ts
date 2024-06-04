@@ -35,6 +35,7 @@ const config: Config = {
       white: colors.white,
       black: colors.black,
       sky: colors.sky,
+      slate: colors.slate,
     },
     extend: {
       animation: {

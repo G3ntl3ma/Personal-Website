@@ -2,13 +2,10 @@ import React from 'react'
 import NavBar from "@/components/NavBar";
 import StarterImg from "@/components/StartingImage";
 import TextBlock from '@/components/TextBlock';
-import {motion} from 'framer-motion'
-
 
 type Props = {}
 
 export default function MainPage({}: Props) {
-  console.log(__dirname)
       return (
     
     <div>
