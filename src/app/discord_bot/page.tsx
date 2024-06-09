@@ -1,3 +1,4 @@
+"use client"
 import React from 'react'
 import StarterImg from '@/components/StartingImage'
 import NavBar from '@/components/NavBar'
@@ -5,6 +6,7 @@ import Image from 'next/image'
 import TextBlock from '@/components/TextBlock'
 import { TracingBeam } from '@/components/tracing-beam'
 import Footer from "@/components/Footer";
+import {motion} from "framer-motion"
 type Props = {}
 
 export default function BotPage({}: Props) {
@@ -12,7 +14,11 @@ export default function BotPage({}: Props) {
     <div className='content-center'>
       <NavBar></NavBar>
       <StarterImg src = "https://i.imgur.com/deu1U5t.jpg" alt = "Logo of the Discord Bot"/>
+      <motion.div 
+        initial= {{opacity: 0, y: 40}} whileInView={{opacity:1, y:0}} transition= {{delay: 0.3, duration: 0.6, ease: "easeInOut"}}
+      >
       <h1 className='text-8xl text-center font-bold mb-5'>Track your favorite LoL Teams</h1>
+      </motion.div>
       <div className='justify-center h-auto w-2/3 m-auto mt-[15rem]'>
       <p className="mb-5 text-3xl text-center text-balance" >Subscribe to your favorite Teams</p>
       <img className= "ml-auto mr-auto" src='/discord_subs.png' alt='Overview of Subscriptions with LoLBot' width= "800px"></img>

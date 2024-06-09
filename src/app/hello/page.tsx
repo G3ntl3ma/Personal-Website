@@ -7,9 +7,9 @@ type Props = {}
 export default function page({}: Props) {
   return (
     
-    <div className='h-full'>
+    <div className='h-screen flex flex-col'>
       <NavBar></NavBar>
-      <h1 className='h-full text-8xl  text-center p-36'>{"hello :)"}</h1>
+      <h1 className='h-full text-8xl  text-center p-36 mb-auto'>{"hello :)"}</h1>
       <Footer/>
     </div>
   )
